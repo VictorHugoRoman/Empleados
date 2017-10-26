@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Empleados.Models.Departamentos>
+
+@{
+    ViewBag.Title = "Departamentos";
+}
+
+<h2>Departamentos</h2>
+
+<p align="right">
+    <input type="button" class="btn btn-primary" value="Nuevo" onclick="location.href='@Url.Action("Create")'" />
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.descripcion)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.descripcion)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.puesto }) |
+            @Html.ActionLink("Detalle", "Details", new { id=item.puesto }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.puesto })
+        </td>
+    </tr>
+}
+
+</table>

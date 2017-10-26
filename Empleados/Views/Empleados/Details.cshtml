@@ -1,0 +1,66 @@
+﻿@model Empleados.Models.Empleados
+
+@{
+    ViewBag.Title = "Detalle";
+}
+
+<h2>Detalle Empleados</h2>
+
+<div>
+    <h4>Empleados</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.apPaterno)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.apPaterno)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.apMaterno)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.apMaterno)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FecNac)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FecNac)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.departamento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.departamento.descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sueldo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sueldo)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.Clave_Emp }) |
+    @Html.ActionLink("Regresar", "Index")
+</p>

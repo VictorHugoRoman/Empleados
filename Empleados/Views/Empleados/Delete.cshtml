@@ -1,0 +1,68 @@
+﻿@model Empleados.Models.Empleados
+
+@{
+    ViewBag.Title = "Eliminar";
+}
+
+<h2>Delete</h2>
+
+<h3>Esta seguro que desea eliminar empleado?</h3>
+<div>
+    <h4>Eliminar Empleado</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.apPaterno)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.apPaterno)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.apMaterno)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.apMaterno)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FecNac)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FecNac)
+        </dd>
+
+        <dd>
+            @Html.DisplayFor(model => model.departamento.descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sueldo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sueldo)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+            @Html.ActionLink("Regresar", "Index")
+        </div>
+    }
+</div>
